@@ -1,0 +1,19 @@
+{
+  "name": "event-processor-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "build-image": "./build_image.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "BlockRocket.tech",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15"
+  }
+}

@@ -1,4 +1,4 @@
 eth-event-listener-gc-run.iml
-node_modules
+event-listener/node_modules
 .idea
-eth-event-listener-gc-run.iml
+.DS_Store

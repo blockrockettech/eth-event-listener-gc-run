@@ -19,10 +19,12 @@ Goals
 General Architecture
 ====================
 
-* Google Cloud Run - Dockerised NodeJS application
-* Event found, POST'ed to configured API
-* Serverless based event consumer
-* Data persisted to Cloud DB
+* `event-listener` 
+    - scrapes and listens for event from a set of configured smart contracts
+    - Found events are handled by `event-processor-api` 
+    - State maintains the current last block scrapped
+* `event-processor-api` is a simple serverless and statelsss API
+    - New events are handle accordingly and persisted to Cloud DB
 
 ### Google Cloud Run Setup
 

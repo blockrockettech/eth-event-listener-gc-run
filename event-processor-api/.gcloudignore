@@ -1,0 +1,4 @@
+
+# Exclude dependencies
+test
+src/node_modules/
