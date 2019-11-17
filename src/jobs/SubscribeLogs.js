@@ -37,7 +37,7 @@ class SubscribeLogs {
             })
             .on('data', async (log) => {
                 console.log('data', log);
-                await this.handler.handleEvent(this.network, log);
+                await this.handler.handleEvent(log, this.network);
             })
             .on('changed', async (log) => {
                 console.log('changed', log);

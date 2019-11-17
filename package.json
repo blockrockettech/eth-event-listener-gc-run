@@ -1,10 +1,11 @@
 {
   "name": "eth-event-listener-gc-run",
+  "description": "ETH Event Listener",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node ./src/index.js",
+    "build-image": "./build_image.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

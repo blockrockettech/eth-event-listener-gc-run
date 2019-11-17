@@ -13,14 +13,14 @@ const SubscribeLogs = require('./jobs/SubscribeLogs');
 
 const InboundTerminalWebHook = require('./jobs/InboundTerminalWebHook');
 
-// Native Subscribe
-new SubscribeLogs(network, {
-    fromBlock: fromBlock,
-    toBlock: 'latest',
-    address: registry.configuredAddresses(network)
-})
-    .withHandler(handler)
-    .start();
+// // Native Subscribe
+// new SubscribeLogs(network, {
+//     fromBlock: fromBlock,
+//     toBlock: 'latest',
+//     address: registry.configuredAddresses(network)
+// })
+//     .withHandler(handler)
+//     .start();
 
 // Terminal.co webhooks
 new InboundTerminalWebHook()

@@ -1,7 +1,7 @@
 class Handler {
 
-    handleEvent(network, event) {
-
+    handleEvent(event, network = null) {
+        console.log(`New event found`, event);
     }
 
 }
