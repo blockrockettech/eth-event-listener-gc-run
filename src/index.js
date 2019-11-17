@@ -13,16 +13,26 @@ const SubscribeLogs = require('./jobs/SubscribeLogs');
 
 const InboundTerminalWebHook = require('./jobs/InboundTerminalWebHook');
 
-// Native Subscribe
-new SubscribeLogs(network, {
-    fromBlock: fromBlock,
-    toBlock: 'latest',
-    address: registry.configuredAddresses(network)
-})
-    .withHandler(handler)
-    .start();
+const GetAllPastEvents = require('./jobs/GetAllPastEvents');
+
+// // Native Subscribe
+// new SubscribeLogs(network, {
+//     fromBlock: fromBlock,
+//     toBlock: 'latest',
+//     address: registry.configuredAddresses(network)
+// })
+//     .withHandler(handler)
+//     .start();
 
 // Terminal.co webhooks
 // new InboundTerminalWebHook()
 //     .withHandler(handler)
 //     .start();
+
+// getAllPastEvents
+new GetAllPastEvents(network, {
+    address: registry.configuredAddresses(network),
+    defaultBlockStep: 10000
+})
+    .withHandler(handler)
+    .start();
