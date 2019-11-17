@@ -21,6 +21,8 @@
     "axios": "^0.19.0",
     "koda-contract-tools": "^1.6.2",
     "lodash": "^4.17.15",
-    "web3": "^1.2.4"
+    "web3": "^1.2.4",
+    "cors": "latest",
+    "express": "latest"
   }
 }

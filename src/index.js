@@ -9,16 +9,20 @@ const network = 1;
 // TODO add fromBlock block to config options
 const fromBlock = 6270484;
 
-const addresses = registry.configuredAddresses(network);
-
-const options = {
-    fromBlock: fromBlock,
-    toBlock: 'latest',
-    address: addresses
-};
-
 const SubscribeLogs = require('./jobs/SubscribeLogs');
 
-new SubscribeLogs(network, options)
+const InboundTerminalWebHook = require('./jobs/InboundTerminalWebHook');
+
+// Native Subscribe
+new SubscribeLogs(network, {
+    fromBlock: fromBlock,
+    toBlock: 'latest',
+    address: registry.configuredAddresses(network)
+})
+    .withHandler(handler)
+    .start();
+
+// Terminal.co webhooks
+new InboundTerminalWebHook()
     .withHandler(handler)
     .start();
