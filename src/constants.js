@@ -1,0 +1,5 @@
+const INFURA_API_KEY_V3 = '4396873c00c84479991e58a34a54ebd9';
+
+module.exports = {
+    INFURA_API_KEY: INFURA_API_KEY_V3
+};
