@@ -1,9 +1,9 @@
 const HttpHandler = require('./HttpHandler');
-const CsvFileWriter = require('./CsvFileWriter');
+const FileWriter = require('./FileWriter');
 const CloudFirestoreHandler = require('./CloudFirestoreHandler');
 
 module.exports = {
     HttpHandler,
-    CsvFileWriter,
+    FileWriter,
     CloudFirestoreHandler,
 };

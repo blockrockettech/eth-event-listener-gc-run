@@ -2,17 +2,11 @@ const _ = require('lodash');
 
 const registry = require('./registry');
 
-const {
-    CloudFirestoreHandler,
-    CsvFileWriter,
-    HttpHandler
-} = require('./handlers');
+// A selection of scrappers, responsible for obtaining events
+const {StatefulEventScrapper, InboundTerminalWebHook, StatelessEventSubscriber} = require('./workers');
 
-const {
-    StatefulEventScrapper,
-    InboundTerminalWebHook,
-    StatelessEventSubscriber
-} = require('./workers');
+// A selection of handlers, responsible for writing events somewhere
+const {CloudFirestoreHandler, FileWriter, HttpHandler} = require('./handlers');
 
 // TODO add as init property
 const network = 1;
@@ -21,7 +15,7 @@ const network = 1;
 const fromBlock = 6270484;
 
 const cloudFirestoreHandler = new CloudFirestoreHandler({network});
-const csvFileWriter = new CsvFileWriter({network});
+const fileWriter = new FileWriter({network});
 const httpHandler = new HttpHandler({network});
 
 // // Native Subscribe
@@ -43,7 +37,7 @@ new StatefulEventScrapper(network, {
     address: registry.configuredAddresses(network),
     defaultBlockStep: 10000
 })
-    .withHandler(csvFileWriter)
+    .withHandler(fileWriter)
     .onError((err) => {
         console.log(`Unable to process job`, err);
         process.exit();

@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-class CsvFileWriter {
+class FileWriter {
 
     constructor(options = {}) {
         this.options = options;
@@ -18,4 +18,4 @@ class CsvFileWriter {
 
 }
 
-module.exports = CsvFileWriter;
+module.exports = FileWriter;
