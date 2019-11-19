@@ -8,6 +8,10 @@ const express = require('express');
  */
 class InboundTerminalWebHook {
 
+    constructor(options = {}) {
+        this.options = options;
+    }
+
     withHandler(handler) {
         this.handler = handler;
         return this;

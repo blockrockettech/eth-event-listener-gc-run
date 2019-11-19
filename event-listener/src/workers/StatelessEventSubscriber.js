@@ -37,7 +37,7 @@ class StatelessEventSubscriber {
             })
             .on('data', async (log) => {
                 console.log('data', log);
-                await this.handler.handleEvent(log, this.network);
+                await this.handler.handleEvent(log);
             })
             .on('changed', async (log) => {
                 console.log('changed', log);

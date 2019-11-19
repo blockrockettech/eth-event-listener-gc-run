@@ -48,7 +48,7 @@ class StatefulEventScrapper {
                     .then((events) => {
                         // Handle events
                         return Promise.all(_.map(events, (event) => {
-                            return this.handler.handleEvent(event, this.network);
+                            return this.handler.handleEvent(event);
                         }));
                     })
                     .then(() => {

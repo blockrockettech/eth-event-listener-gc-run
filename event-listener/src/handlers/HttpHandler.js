@@ -1,6 +1,10 @@
 const axios = require('axios');
 
-class Handler {
+class HttpHandler {
+
+    constructor(options = {}) {
+        this.options = options;
+    }
 
     /**
      * Handle the event in some form, all operations must be idempotent
@@ -15,4 +19,4 @@ class Handler {
 
 }
 
-module.exports = new Handler();
+module.exports = HttpHandler;
