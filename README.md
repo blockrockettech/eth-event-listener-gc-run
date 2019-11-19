@@ -6,14 +6,16 @@ Simple NodeJS based, event listener for ethereum based blockchains.
 Goals
 =====
 
-* Dockerised
-* Google Cloud Run Application
-* Node JS based
-* Web3 JS based
-* Multiple options for consuming events e.g. native subscribe, inbound webhooks from 3rd parties etc
+* Dockerised - DONE
+* Google Cloud Run Application - DONE
+* Node JS based - DONE
+* Web3 JS based - DONE
+* Multiple options for consuming events e.g. native subscribe, inbound webhooks from 3rd parties etc  - DONE
+* Ability to define many contracts to watch - DONE
+* Ability to POST matched events from specific contracts to a configured endpoint  - DONE
+* Ability to write matched events from specific contracts to a file  - DONE
+* Ability to write matched events from specific contracts to a Google Cloud DB
 * Ability to re-start if the process dies
-* Ability to POST matched events from specific contracts to a configured endpoint
-* Ability to define many contracts to watch
 * General EVM network compatibility - e.g. mainnet, ropsten, rinkeby, koven, Görli, POA, xDAI
 
 General Architecture
@@ -21,8 +23,8 @@ General Architecture
 
 * `event-listener` 
     - scrapes and listens for event from a set of configured smart contracts
-    - Found events are handled by `event-processor-api` 
-    - State maintains the current last block scrapped
+    - Found events are handled by a set of available handlers which can write top files, DB or post to endpoints such as `event-processor-api`  
+    - Stateful implementations maintain the current last block scrapped from the network
 * `event-processor-api` is a simple serverless and statelsss API
     - New events are handle accordingly and persisted to Cloud DB
 
