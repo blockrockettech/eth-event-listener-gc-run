@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/blockrockettech/eth-event-listener-gc-run#readme",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "koda-contract-tools": "^1.6.2",
     "lodash": "^4.17.15",
     "web3": "^1.2.4",
